@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glass-card {
+  @apply rounded-sm bg-white/70 backdrop-blur shadow p-6 ring-1;
+}
+
+/* chart/table headings */
+.card-title {
+  @apply font-bold mb-4 flex items-center gap-2 text-textPrimary;
+}
+
+/* src/styles/cyberCard.css */
+.cyber-container    { /*   <-- replaced `.container`   */
+  position: relative;
+  width: 190px;
+  height: 254px;
+  transition: 200ms;
+}
+
+.cyber-container:active { width: 180px; height: 245px; }
+
+/* …keep all your CSS exactly the same…
+   Just prefix every selector that USED to start with
+   `.container` / `.canvas` / `#card` / `.tracker`
+   so they now all start with `.cyber-`
+   (examples below)                                    */
+
+.cyber-container .canvas         { perspective: 800px; /* etc… */ }
+.cyber-container #card           { /* … */ }
+.cyber-container .tracker        { /* … */ }
+/* keep the rest unchanged */
