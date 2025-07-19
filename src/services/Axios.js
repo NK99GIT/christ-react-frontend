@@ -10,6 +10,7 @@ const Axios = axios.create({
 // Optional: Attach token if available
 Axios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
+    console.log("🚀 Requesting:", config.baseURL + config.url);
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
