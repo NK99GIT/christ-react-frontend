@@ -325,6 +325,9 @@ function CopyLinkModal({ quiz, onClose }) {
 
 
     const validUntil = formatISTDateTime(new Date(Date.now() + expTime * 60 * 60 * 1000)); // hours to ms
+    const currentDomain = window.location.hostname;
+    console.log(currentDomain)
+
     let PlayData = {
       quiz_id: quiz.id,
       keyword: keyword,
@@ -332,7 +335,7 @@ function CopyLinkModal({ quiz, onClose }) {
       offset: offset,
       limit: limit,
       valid_time: validUntil,
-      link:`http://54.252.223.157/quizplay/${encQuizId}/${encQuizTitle}/${encKeyword}/${EncLimit}/${EncOffset}`,
+      link:`http://${currentDomain}/quizplay/${encQuizId}/${encQuizTitle}/${encKeyword}/${EncLimit}/${EncOffset}`,
     };
 
     createQuizPlay(PlayData); 

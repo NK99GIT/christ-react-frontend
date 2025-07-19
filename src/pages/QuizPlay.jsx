@@ -51,16 +51,16 @@ const [showExpired, setShowExpired] = useState(false);
   };
 
 const handlePlayClick = (id, valid_time) => {
-  const now = new Date();
-  const valid = new Date() - 1 ||  new Date(valid_time);
+  // const now = new Date();
+  // const valid = new Date() - 1 ||  new Date(valid_time);
 
-  if (valid < now) {
-    setShowExpired(true);
-    console.log(true)
-  } else{
-    console.log(false)
+  // if (valid < now) {
+  //   setShowExpired(true);
+  //   console.log(true)
+  // } else{
+  //   console.log(false)
 
-  }
+  // }
 };
 
   const handleStart = async (e) => {
@@ -150,8 +150,8 @@ if(data !=="Already Extis"){
   };
 const GetValid = async ()=>{
   const res2 = await QuestionServices.getQuizPlayDetails(14);
-  console.log(res2[0].valid_time)
-  handlePlayClick(res2[0].valid_tim)
+  // console.log(res2[0].valid_time)
+  // handlePlayClick(res2[0].valid_tim)
 
 
 }
