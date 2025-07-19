@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Axios = axios.create({
-  baseURL: "http://ec2-3-104-124-106.ap-southeast-2.compute.amazonaws.com:3306/api/", // ✅ update to your backend URL
+  baseURL: "http://3.107.89.15:3306:3306/api/",
   headers: {
     "Content-Type": "application/json",
   },
