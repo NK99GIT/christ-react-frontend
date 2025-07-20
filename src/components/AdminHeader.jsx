@@ -36,7 +36,7 @@ export default function AdminHeader({ title, adminEmail, onToggleSidebar }) {
         <div className="flex items-center gap-4">
           <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary overflow-hidden">
             <img
-              src={`http://localhost:5001${UserImage}`}
+              src={`${UserImage}`}
               alt="admin"
               className="w-full h-full object-cover rounded"
             />

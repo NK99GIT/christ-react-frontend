@@ -104,7 +104,7 @@ export default function AdminProfile() {
       <div className="bg-white rounded-2xl shadow p-6 flex gap-6">
         {form.avatar ? (
           <img
-            src={`http://localhost:5001${form.avatar}`}
+            src={`${form.avatar}`}
             alt={form.name}
             className="w-24 h-24 rounded-full border object-cover"
           />
