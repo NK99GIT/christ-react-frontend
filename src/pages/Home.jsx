@@ -65,7 +65,7 @@ const Home = () => {
         const loadData = async () => {
             try {
                 const leaderboardData = await QuizServices.getLeaderboard();
-                console.log(leaderboardData)
+               
                 setLeaderboard(leaderboardData.data.slice(0, 3));
             } catch (err) {
                 console.error("Some API failed:", err);
@@ -74,7 +74,7 @@ const Home = () => {
           const fetchData = async () => { 
         try {
             const res = await QuizServices.getQuizAllPlay();
-            console.log(res)
+             
             setReaclcategories(res.data);
         } catch (err) {
             console.error("Failed to load quizzes", err);

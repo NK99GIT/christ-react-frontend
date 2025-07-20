@@ -39,8 +39,7 @@ const createQuizPlay = async (quizPlayData) => {
       progress: undefined,
       theme: "light",
     });
-    console.log("Quiz play created:", res.data);
-    // Optionally show a success message or redirect
+     // Optionally show a success message or redirect
   } catch (err) {
     console.error("Failed to create quiz play", err);
     // Optionally show an error message
@@ -326,8 +325,7 @@ function CopyLinkModal({ quiz, onClose }) {
 
     const validUntil = formatISTDateTime(new Date(Date.now() + expTime * 60 * 60 * 1000)); // hours to ms
     const currentDomain = window.location.hostname;
-    console.log(currentDomain)
-
+ 
     let PlayData = {
       quiz_id: quiz.id,
       keyword: keyword,

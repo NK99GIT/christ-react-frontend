@@ -28,7 +28,7 @@ function QuizPlayLists() {
     setLoad(true);
     try {
       const res = await QuizServices.getQuizAllPlay();
-      console.log(res)
+     
       setCategories(res.data);
     } catch (err) {
       console.error("Failed to load quizzes", err);
