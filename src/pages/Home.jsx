@@ -355,9 +355,9 @@ const Home = () => {
                     </motion.div>
 
                     <div className="text-center mt-8">
-                        <Link to="/leaderboard" className="text-primary font-semibold underline">
+                        {/* <Link to="/leaderboard" className="text-primary font-semibold underline">
                             View full leaderboard →
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </section>
@@ -386,7 +386,7 @@ const Home = () => {
 
             {/* ───────── PARTNERS ───────── */}
 
-            <section className="max-w-6xl mx-auto px-6 py-24">
+            {/* <section className="max-w-6xl mx-auto px-6 py-24">
                 <motion.h3
                     className="text-3xl font-extrabold text-center mb-14 text-textPrimary"
                     variants={fadeUp}
@@ -421,7 +421,7 @@ const Home = () => {
                         </motion.div>
                     ))}
                 </div>
-            </section>
+            </section> */}
 
 
 
@@ -431,10 +431,10 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-8">
                     <div>
                         <h4 className="font-extrabold text-lg mb-2">
-                            Fun Quiz Adventure © {new Date().getFullYear()}
+                            Friends In Christ © {new Date().getFullYear()}
                         </h4>
                         <p className="text-sm opacity-80">
-                            Made with ❤️ for curious kids everywhere.
+                            Made with ❤️ for curious kids everyone.
                         </p>
                     </div>
 
