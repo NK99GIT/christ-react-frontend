@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   MdAdd,MdPreview, MdEdit, MdDelete, MdVisibility,MdHistoryEdu, MdContentCopy,
 } from "react-icons/md";
+import AddLinkIcon from '@mui/icons-material/AddLink';
+
 import { Shimmer } from "react-shimmer";
 import QuizServices from "../../services/Quiz.services";
 import Swal from "sweetalert2"; 
@@ -147,24 +149,29 @@ export default function Quizzes() {
                   <td className="p-3 border-b-2">{q.title}</td>
                   <td className="p-3 border-b-2">{q.category}</td>
                   <td className="p-3 border-b-2">{q.question_count}</td>
-                  <td className="p-3 border-b-2">
+                  <td className="p-3 border-b-2 text-xl">
                     <div className="flex items-center gap-3">
-                      <button title="Create Quiz Play" className="text-blue-500 hover:text-blue-400" onClick={() => setCopyModal(q)}>
-                        <MdAdd />
+
+                      <button title="Edit" className="text-yellow-600 hover:text-yellow-500" onClick={() => setEdit(q)}>
+                        <MdEdit />
                       </button>
-                      <button title="View Quiz Play"
-                        className="text-purple-600 hover:text-purple-500"
+
+                      <button title="View Quiz"
+                        className="text-green-600 hover:text-purple-500"
                         onClick={() => navigate(`/admin/quizplaylist/${btoa(q.id)}`)}
                       >
                         <MdVisibility />
                       </button>
-                      <button title="View All Questions" className="text-purple-600 hover:text-purple-500"
+
+                       <button title="View All Questions" className="text-purple-600 hover:text-purple-500"
                         onClick={() => navigate(`/admin/questions/${q.id}`)}>
                         <MdHistoryEdu />
                       </button>
-                      <button title="Edit" className="text-yellow-600 hover:text-yellow-500" onClick={() => setEdit(q)}>
-                        <MdEdit />
+
+                      <button title="Create Quiz Link" className="text-blue-500 hover:text-blue-400" onClick={() => setCopyModal(q)}>
+                        <AddLinkIcon />
                       </button>
+
                       <button title="Delete" className="text-red-600 hover:text-red-500" onClick={() => setConf(q.id)}>
                         <MdDelete />
                       </button>

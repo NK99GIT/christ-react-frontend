@@ -99,8 +99,8 @@ const Home = () => {
                     <div className='flex items-center gap-4'>
                         <img src={Logo} className='w-14 rounded-full bg-gray-600' />
                         <h2 className='text-4xl text-red-700'>
-                            <span className='font-bold'>LITTLE</span>
-                            <span className='font-bold'>  MOUNT</span>
+                            <span className='font-bold'>Friends </span>
+                            <span className='font-bold'>  In Christ</span>
                         </h2>
                     </div>
                     <nav className="hidden md:flex gap-8 font-semibold">
@@ -126,12 +126,14 @@ const Home = () => {
                         transition={{ duration: 0.6 }}
                         className="space-y-6 md:w-1/2"
                     >
-                        <h2 className="text-5xl font-extrabold leading-tight">
-                            Challenge Your Mind, <br /> Earn Badges, Have Fun!
+                        <h1 className="text-5xl font-extrabold leading-tight">
+My Bibile Quiz
+                        </h1>
+                        <h2 className="text-3xl font-extrabold leading-tight">
+Dive Deeper into the Word of God
                         </h2>
                         <p className="text-lg">
-                            Curated quizzes for ages 6 – 12. Learn something new every day and
-                            top the leaderboard.
+                           From Genesis to Revelation, explore themed quizzes, unlock levels, and climb the leaderboard as you master scripture stories, characters, and verses — all while deepening your spiritual walk.
                         </p>
                         <div className="flex gap-4">
                             {/* <Link

@@ -50,18 +50,21 @@ const [showExpired, setShowExpired] = useState(false);
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-const handlePlayClick = (id, valid_time) => {
-  // const now = new Date();
-  // const valid = new Date() - 1 ||  new Date(valid_time);
+const handlePlayClick = (valid_time) => {
+  const now = new Date(); // current time in local timezone
+  const valid = new Date(valid_time); // parsed from UTC ISO string
+console.log(valid_time)
+  console.log("Now       :", now.toISOString());
+  console.log("Valid Time:", valid.toISOString());
 
-  // if (valid < now) {
-  //   setShowExpired(true);
-  //   console.log(true)
-  // } else{
-  //   console.log(false)
-
-  // }
+  if (valid.getTime() < now.getTime()) {
+    setShowExpired(true);
+    console.log("Quiz is expired");
+  } else {
+    console.log("Quiz is still valid");
+  }
 };
+
 
   const handleStart = async (e) => {
     e.preventDefault();
@@ -149,9 +152,11 @@ if(data !=="Already Extis"){
     }
   };
 const GetValid = async ()=>{
-  const res2 = await QuestionServices.getQuizPlayDetails(14);
-  // console.log(res2[0].valid_time)
-  // handlePlayClick(res2[0].valid_tim)
+  const res2 = await QuestionServices.getQuizPlayDetails(5);
+
+  console.log(res2[0].valid_time)
+  console.log(res2[0])
+  handlePlayClick(res2[0].valid_time)
 
 
 }
