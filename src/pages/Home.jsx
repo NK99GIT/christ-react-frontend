@@ -434,7 +434,7 @@ const Home = () => {
                             Friends In Christ © {new Date().getFullYear()}
                         </h4>
                         <p className="text-sm opacity-80">
-                            Made with ❤️ for curious kids everyone.
+                            Made with ❤️ for curious kids & everyone.
                         </p>
                     </div>
 

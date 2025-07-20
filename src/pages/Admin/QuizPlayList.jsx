@@ -72,8 +72,13 @@ export default function QuizPlayList() {
 const CopyLink = (link) => {
   console.log("link:", link);
 
-  navigator.clipboard.writeText(link)
-    .then(() => {
+  const textarea = document.createElement("textarea");
+  textarea.value = link;
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    const successful = document.execCommand("copy");
+    if (successful) {
       toast.success('Copied!', {
         position: "top-right",
         autoClose: 3000,
@@ -84,14 +89,17 @@ const CopyLink = (link) => {
         progress: undefined,
         theme: "light",
       });
-    })
-    .catch((err) => {
-      console.error("Copy failed:", err);
-      toast.error('Failed to copy!', {
-        position: "top-right",
-        theme: "colored",
-      });
+    } else {
+      throw new Error("Copy command failed");
+    }
+  } catch (err) {
+    console.error("Fallback: Copy failed", err);
+    toast.error('Failed to copy!', {
+      position: "top-right",
+      theme: "colored",
     });
+  }
+  document.body.removeChild(textarea);
 };
 
 
