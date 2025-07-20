@@ -66,7 +66,7 @@ const Home = () => {
             try {
                 const leaderboardData = await QuizServices.getLeaderboard();
                
-                setLeaderboard(leaderboardData.data.slice(0, 3));
+                setLeaderboard(leaderboardData.data.slice(0, 10));
             } catch (err) {
                 console.error("Some API failed:", err);
             }
@@ -105,7 +105,7 @@ const Home = () => {
                     </div>
                     <nav className="hidden md:flex gap-8 font-semibold">
                         <Link to="/admin/login" className="hover:text-primary">Admin</Link>
-                        <Link to="/leaderboard" className="hover:text-primary">Leaderboard</Link>
+                        {/* <Link to="/leaderboard" className="hover:text-primary">Leaderboard</Link> */}
                     </nav>
                     <Link
                         to="/login"
@@ -134,11 +134,11 @@ const Home = () => {
                             top the leaderboard.
                         </p>
                         <div className="flex gap-4">
-                            <Link
+                            {/* <Link
                                 to="/leaderboardn"
                                 className="bg-white text-primary font-bold px-6 py-3 rounded-sm shadow hover:shadow-lg transition"
                             >   View Leaderboard
-                            </Link>
+                            </Link> */}
                             {/* <Link
                                 to="/leaderboard"
                                 className="underline underline-offset-4 font-semibold"
