@@ -70,10 +70,10 @@ export default function QuizPlayList() {
   };
 
   const CopyLink = (link) => {
-    console.log(link)
+    console.log("link :" , link)
     navigator.clipboard.writeText(link);
     toast.success('Copied!', {
-      position: "top-RIGHT",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: false,
