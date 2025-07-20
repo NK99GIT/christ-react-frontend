@@ -343,7 +343,7 @@ const Home = () => {
                                 {leaderboard.map(({ id, name, score }, index) => (
                                     <tr key={index} className="odd:bg-primary/5 last:border-none border-b">
                                         <td className="px-5 py-3 font-semibold">
-                                            {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index}
+                                            {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index+1}
                                         </td>
                                         <td className="px-5 py-3">  {name.charAt(0).toUpperCase() + name.slice(1)}</td>
                                         <td className="px-5 py-3">{score}</td>
