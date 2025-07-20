@@ -69,20 +69,31 @@ export default function QuizPlayList() {
     }
   };
 
-  const CopyLink = (link) => {
-    console.log("link :" , link)
-    navigator.clipboard.writeText(link);
-    toast.success('Copied!', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+const CopyLink = (link) => {
+  console.log("link:", link);
+
+  navigator.clipboard.writeText(link)
+    .then(() => {
+      toast.success('Copied!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    })
+    .catch((err) => {
+      console.error("Copy failed:", err);
+      toast.error('Failed to copy!', {
+        position: "top-right",
+        theme: "colored",
+      });
     });
-  }
+};
+
 
   return (
     <div className="space-y-8">

@@ -376,7 +376,7 @@ function CopyLinkModal({ quiz, onClose }) {
 
       <div className="flex justify-end gap-3">
         <button onClick={onClose} className="px-4 py-2 rounded-sm bg-gray-100 border">Cancel</button>
-        <button onClick={generateLink} className="px-4 py-2 rounded-sm bg-blue-600 text-white hover:ring-2 hover:ring-primary/40">Copy Link</button>
+        <button onClick={generateLink} className="px-4 py-2 rounded-sm bg-blue-600 text-white hover:ring-2 hover:ring-primary/40">Create Quiz Play</button>
       </div>
     </div>
   );
