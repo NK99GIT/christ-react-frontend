@@ -3,9 +3,10 @@ import html2canvas from "html2canvas";
 import { useParams } from "react-router-dom";
 
 import awardImg from "../assets/Images/12390.jpg";
-import Logo from "../assets/Images/1.png";
+import Logo from "../assets/Images/logo-with-white.png";
+import LogoWithouttext from "../assets/Images/logo-white.png";
 import Logo2 from "../assets/Images/22.png";
-import sign from "../assets/Images/sign.png";
+import sign from "../assets/Images/sign1.png";
 import QuestionServices from "../services/Question.services";
 
 const Certificate = () => {
@@ -61,7 +62,7 @@ const Certificate = () => {
     <>
     <div className="bg-indigo-500 h-20"> 
       </div>
-    <div
+    <div 
       style={{
         marginTop: "30px",
         background: "#f3f4f6",
@@ -69,7 +70,7 @@ const Certificate = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        overflow: "auto",
+        overflow: "auto", 
       }}
     >
       {/* Certificate (Fixed A4 Size: 1120x792) */}
@@ -85,6 +86,7 @@ const Certificate = () => {
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
           overflow: "hidden",
           boxSizing: "border-box",
+          
         }}
       >
         {/* Blue Ribbons */}
@@ -114,7 +116,7 @@ const Certificate = () => {
         />
 
         {/* Logos and Headers */}
-        <img src={Logo} style={{ width: "80px",backgroundColor:"#fff", position: "absolute", top: 30, left: 20, zIndex: 10 }} alt="Logo" /> 
+        <img src={LogoWithouttext} style={{ width: "100px", position: "absolute", top: 10, left: 20, zIndex: 10 }} alt="Logo" /> 
         <h2 className="text-white text-5xl absolute top-12 left-[300px] font-bold">FRIENDS IN CHRIST</h2> 
       
         <h2
@@ -183,7 +185,7 @@ const Certificate = () => {
 
           {/* Signature */}
           <div style={{ textAlign: "center" }}>
-            <img src={sign} style={{ width: "60px", margin: "0 auto" }} alt="Signature" />
+            <img src={sign} style={{ width: "100px", margin: "0 auto" }} alt="Signature" />
             <div
               style={{
                 borderTop: "2px solid #6b7280",
@@ -214,10 +216,15 @@ const Certificate = () => {
         Download Certificate
       </button>
       </div>
-      <div className="absolute left-10 top-2 w-16 ">
-      <img src={Logo} className="rounded-full"/>
+      <div className="absolute left-10 top-2 w-[180px] ">
+      <img src={Logo} className="rounded-full w-full"/>
       </div>
     </div>
+
+<div className="bg-white border w-[400px] mx-auto text-center">
+
+</div>
+
     </>
   );
 };

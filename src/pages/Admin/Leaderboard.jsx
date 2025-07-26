@@ -16,6 +16,7 @@ export default function Leaderboard() {
   // Call API via services
   useEffect(() => {
     const loadData = async () => {
+      
       try {
         const response = await QuizServices.getLeaderboard();
         setAllResults(response.data || []);
@@ -158,11 +159,11 @@ Export All
         )}
 
         {/* Home link */}
-        <div className="text-center mt-8">
-          <Link to="/" className="text-indigo-600 underline">
-            ← Return Home
+        {/* <div className="text-center mt-8">
+          <Link to="/admin/leaderboard" className="text-indigo-600 underline">
+            ← Dash
           </Link>
-        </div>
+        </div> */}
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { HiMail, HiEye, HiEyeOff } from "react-icons/hi";
 import { MdLockOutline } from "react-icons/md";
 import jeausImage from "../../assets/Images/admin-login.jpg";
-import Logo from "../../assets/Images/1.png";
+import Logo from "../../assets/Images/logo-white.png";
 import Axios from "../../services/Axios"; // ✅ your custom Axios instance
 
 const Login = () => {

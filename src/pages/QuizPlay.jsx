@@ -5,6 +5,8 @@ import { MdArrowBack } from "react-icons/md";
 import QuestionServices from "../services/Question.services";
 import QuizServices from "../services/Quiz.services";
 import Logo from "../assets/Images/1.png";
+import LogowithText from "../assets/Images/logo-with-black.png";
+import LogowithTextWhite from "../assets/Images/logo-with-white.png";
 import Logo2 from "../assets/Images/22.png";
 import Swal from "sweetalert2"; 
 import LoginBackground from "../assets/Images/us.png";
@@ -53,16 +55,7 @@ const [showExpired, setShowExpired] = useState(false);
 const handlePlayClick = (valid_time) => {
   const now = new Date(); // current time in local timezone
   const valid = new Date(valid_time); // parsed from UTC ISO string
-console.log(valid_time)
-  console.log("Now       :", now.toISOString());
-  console.log("Valid Time:", valid.toISOString());
 
-  if (valid.getTime() < now.getTime()) {
-    setShowExpired(true);
-    console.log("Quiz is expired");
-  } else {
-    console.log("Quiz is still valid");
-  }
 };
 
 
@@ -151,18 +144,20 @@ if(data !=="Already Extis"){
       setLoading(false);
     }
   };
-const GetValid = async ()=>{
+
+const isValid = async () => {
   const res2 = await QuestionServices.getQuizPlayDetails(5);
-
-  console.log(res2[0].valid_time)
-  console.log(res2[0])
-  handlePlayClick(res2[0].valid_time)
-
-
-}
+  const currentTime = new Date();
+  const validTime = new Date(res2[0].valid_time);
+  return currentTime > validTime; // true = valid, false = expired
+};
 
 useEffect(() => {
-GetValid()
+const valid = isValid(); 
+if(valid){
+validConfirm()
+}
+
   if (!quiz || done) return;
 
   const perQuestionTime = parseInt(form.timer) || 30;
@@ -214,11 +209,11 @@ GetValid()
     Swal.fire({
       title: "warning",
       text: "You have already completed the quiz with this phone number. Please use a different number",
-      imageUrl: Logo, // your custom image
+      imageUrl: LogowithText, // your custom image
       imageAlt: 'Warning icon',
-      imageWidth: 100,
-imageHeight: 100,
-  background: '#1e293b',     // dark blue-gray background
+      imageWidth: 250,
+// imageHeight: 100,
+  background: '#9013FE ',     // dark blue-gray background
   color: '#ffffff',  
       showCancelButton: true,        // red
       showConfirmButton: false,        // red
@@ -231,6 +226,28 @@ imageHeight: 100,
       }
     });
   };
+  
+const validConfirm = () => {
+  Swal.fire({
+    title: "Warning",
+    text: "The Quiz Play Expired. Please Visit Our Site",
+    imageUrl: LogowithTextWhite,
+    imageAlt: 'Warning icon',
+    imageWidth: 250,
+    background: '#9013FE',
+    color: '#ffffff',
+    showCancelButton: false,
+    showConfirmButton: true,
+    confirmButtonText: "Our Site",
+    allowOutsideClick: false,  
+    allowEscapeKey: false     
+  }).then((result) => {
+    if (result.isConfirmed) {
+      navigate('/');
+    }
+  });
+};
+
 
   const finish = async () => {
     setDone(true);
@@ -276,7 +293,7 @@ imageHeight: 100,
  
         </div>
 <div className="w-full md:w-1/2 ">
-<img src={Logo2} className="w-[150px] mx-auto" alt="Logo" />
+<img src={LogowithText} className="w-[150px] mx-auto mb-4" alt="Logo" />
         <form
           onSubmit={handleStart}
           className="bg-white rounded-sm shadow-w-full max-w-[500px] space-y-6 flex justify-center flex-col mx-auto"

@@ -5,6 +5,7 @@ import { MdArrowBack } from "react-icons/md";
 import QuestionServices from "../services/Question.services";
 import QuizServices from "../services/Quiz.services";
 import Logo from "../assets/Images/1.png";
+import LogowithBlackText from "../assets/Images/logo-with-black.png";
 import Logo2 from "../assets/Images/22.png";
 import Swal from "sweetalert2";
 import LoginBackground from "../assets/Images/us.png";
@@ -188,11 +189,11 @@ export default function QuizPlayWebsite() {
     Swal.fire({
       title: "warning",
       text: "You have already completed the quiz with this phone number. Please use a different number",
-      imageUrl: Logo,
+      imageUrl: LogowithBlackText,
       imageAlt: 'Warning icon',
-      imageWidth: 100,
-      imageHeight: 100,
-      background: '#1e293b',
+      imageWidth: 250,
+      // imageHeight: 100,
+      background: '#9013FE ',
       color: '#ffffff',
       showCancelButton: true,
       showConfirmButton: false,
@@ -243,7 +244,7 @@ export default function QuizPlayWebsite() {
         <div className="min-h-screen flex items-center justify-center p-0 bg-gray-200">
           <div className="hidden md:block md:w-1/2 min-h-screen bg-cover bg-no-repeat" style={{ backgroundImage: `url(${LoginBackground})` }} />
           <div className="w-full md:w-1/2 ">
-            <img src={Logo2} className="w-[150px] mx-auto" alt="Logo" />
+            <img src={LogowithBlackText} className="w-[150px] mx-auto mb-4" alt="Logo" />
             <form
               onSubmit={handleStart}
               className="bg-white rounded-sm shadow-w-full max-w-[500px] space-y-6 flex justify-center flex-col mx-auto"

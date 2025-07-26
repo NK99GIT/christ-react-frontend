@@ -178,7 +178,7 @@ export default function AdminProfile() {
         <hr />
 
         {/* Avatar Upload */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-medium mb-1">Upload Profile Image</label>
           <input
             type="file"
@@ -193,7 +193,7 @@ export default function AdminProfile() {
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
         >
           Update Avatar
-        </button>
+        </button> */}
       </div>
     </div>
   );

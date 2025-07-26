@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { GiCrossFlare } from "react-icons/gi";
 import { BsBook, BsBookHalf, BsMusicNoteBeamed } from "react-icons/bs";
 import { FaPrayingHands } from "react-icons/fa";
-import Logo from "../assets/Images/1.png";   // ⬆️
-import BannerImg from "../assets/Images/image.png";   // ⬆️
 import { GiOpenBook, GiFeather, GiAnchor } from "react-icons/gi";
 import { FaQuillAlt, FaBible } from "react-icons/fa";
 import QuizServices from "../services/Quiz.services";
 
-// services  
-
+// Images
+import Logo from "../assets/Images/logo.png";   
+import LogoWithText from "../assets/Images/logo-with-black.png";   
+import BannerImg1 from "../assets/Images/image.png"; 
+import BannerImg from "../assets/Images/vector.jpeg"; 
 
 
 const categories = [
@@ -55,6 +56,7 @@ const partners = [
     { name: "Quizlet", logo: "https://logo.clearbit.com/quizlet.com" },
     { name: "Udemy", logo: "https://logo.clearbit.com/udemy.com" },
 ];
+
 const Home = () => {
     const [leaderboard, setLeaderboard] = useState([]);
     const [quizzes, setQuizzes] = useState([]);
@@ -63,8 +65,12 @@ const Home = () => {
 
     useEffect(() => {
         const loadData = async () => {
+            const data = {
+                limit:10,
+            }
+
             try {
-                const leaderboardData = await QuizServices.getLeaderboard();
+                const leaderboardData = await QuizServices.getLeaderboard(data);
                
                 setLeaderboard(leaderboardData.data.slice(0, 10));
             } catch (err) {
@@ -73,7 +79,10 @@ const Home = () => {
         };
           const fetchData = async () => { 
         try {
-            const res = await QuizServices.getQuizAllPlay();
+            const data = {
+                limit:10
+            }
+            const res = await QuizServices.getQuizAllPlay(data);
              
             setReaclcategories(res.data);
         } catch (err) {
@@ -97,8 +106,8 @@ const Home = () => {
             <header className="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
                     <div className='flex items-center gap-4'>
-                        <img src={Logo} className='w-14 rounded-full bg-gray-600' />
-                        <h2 className='text-4xl text-red-700'>
+                        <img src={Logo} className='w-16 rounded-full' />
+                        <h2 className='text-2xl md:text-4xl text-red-700'>
                             <span className='font-bold'>Friends </span>
                             <span className='font-bold'>  In Christ</span>
                         </h2>
@@ -108,10 +117,10 @@ const Home = () => {
                         {/* <Link to="/leaderboard" className="hover:text-primary">Leaderboard</Link> */}
                     </nav>
                     <Link
-                        to="/login"
-                        className="md:hidden bg-primary text-white px-4 py-1 rounded-sm text-sm"
+                        to="/admin/login"
+                        className="md:hidden  px-4 py-1 rounded-sm text-sm"
                     >
-                        Play
+                        Admin
                     </Link>
                 </div>
             </header>
@@ -153,7 +162,7 @@ Dive Deeper into the Word of God
                     <motion.img
                         src={BannerImg}
                         alt="Kids playing quiz"
-                        className="w-full max-w-sm md:max-w-md"
+                        className="w-full rounded-lg max-w-sm md:max-w-md"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -436,7 +445,7 @@ Dive Deeper into the Word of God
                             Friends In Christ © {new Date().getFullYear()}
                         </h4>
                         <p className="text-sm opacity-80">
-                            Made with ❤️ for curious kids & everyone.
+                          A Faithful ❤️ Friend to your Faith!  {/* Made with ❤️ for curious kids & everyone. */}
                         </p>
                     </div>
 

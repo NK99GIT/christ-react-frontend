@@ -146,12 +146,12 @@ const AdminDashboard = () => {
               <h3 className="font-bold flex items-center gap-2 text-textPrimary">
                 <MdHistoryEdu /> Recent Quiz Attempts
               </h3>
-              <button
+              {/* <button
                 onClick={exportToExcel}
                 className="flex items-center text-sm text-blue-600 hover:underline"
               >
                 <FiDownload className="mr-1" /> Export
-              </button>
+              </button> */}
             </div>
             <table className="w-full text-left text-sm">
               <thead className="bg-primary/10">

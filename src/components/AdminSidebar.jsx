@@ -8,7 +8,7 @@ import {
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
-import Logo from "../assets/Images/22.png";
+import Logo from "../assets/Images/logo-with-black.png";
 
 /* navigation map */
 const links = [
