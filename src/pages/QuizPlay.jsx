@@ -18,10 +18,15 @@ const slide = {
 };
 
 export default function QuizPlay() {
-  const { start, end, title, id, keyword } = useParams();
+  const { start, end, title, id, keyword,play_id } = useParams();
+
+  console.log((play_id));
+  console.log(atob(play_id));
+
   const EncStart = atob(start);
   const EncEnd = atob(end);
   const EncID = atob(id);
+  const EncPlayid =  atob(play_id);
   const EncTitle = atob(title);
   const EncKeyword = atob(keyword);
   const navigate = useNavigate();
@@ -146,17 +151,27 @@ if(data !=="Already Extis"){
   };
 
 const isValid = async () => {
-  const res2 = await QuestionServices.getQuizPlayDetails(5);
+  const res2 = await QuestionServices.getQuizPlayDetails(EncPlayid);
   const currentTime = new Date();
-  const validTime = new Date(res2[0].valid_time);
+  // Fix formatting: replace space with T
+  const validTime = new Date(res2[0].valid_time.replace(" ", "T"));
+  console.log("Current:", currentTime);
+  console.log("Valid:", validTime);
   return currentTime > validTime; // true = valid, false = expired
 };
 
+
 useEffect(() => {
-const valid = isValid(); 
-if(valid){
-validConfirm()
-}
+  const checkValid = async () => {
+    const valid = await isValid();
+    console.log(valid);
+
+    if (valid) {
+      validConfirm();
+    }
+  };
+
+  checkValid();
 
   if (!quiz || done) return;
 

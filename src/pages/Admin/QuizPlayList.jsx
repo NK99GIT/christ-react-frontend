@@ -69,11 +69,11 @@ export default function QuizPlayList() {
     }
   };
 
-const CopyLink = (link) => {
-  console.log("link:", link);
-
+const CopyLink = (link,id) => {
   const textarea = document.createElement("textarea");
-  textarea.value = link;
+  const url = `${link}/${btoa(id)}`;
+  textarea.value = url;
+  console.log(textarea.value)
   document.body.appendChild(textarea);
   textarea.select();
   try {
@@ -134,7 +134,7 @@ const CopyLink = (link) => {
                   </td>
                   <td className="p-3 border-b-2">
                     <div className="flex items-center gap-3">
-                      <button title="Create Quiz Play" className="text-blue-500 hover:text-blue-400" onClick={() => CopyLink(q.link)}>
+                      <button title="Create Quiz Play" className="text-blue-500 hover:text-blue-400" onClick={() => CopyLink(q.link,q.id)}>
                         <MdContentCopy />
                       </button>
                       <button

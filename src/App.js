@@ -34,7 +34,7 @@ export default function App() {
         <Route path="/practice/:quizId" element={<PracticeMode />} />
         <Route path="/leaderboard" element={<PublicLeaderboard />} />
         {/* <Route path="/quizplay/:title/:quizId/:range" element={<QuizPlay />} /> */}
-        <Route path="/quizplay/:id/:title/:keyword/:start/:end" element={<QuizPlay />} />
+        <Route path="/quizplay/:id/:title/:keyword/:start/:end/:play_id" element={<QuizPlay />} />
         <Route path="/quizplay/:id" element={<QuizPlayWebsite />} />
         <Route path="/quizplaylists" element={<QuizPlayLists />} />
         <Route path="/certificate/:id/:phone" element={<Certificate />} />
