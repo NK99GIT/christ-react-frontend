@@ -340,7 +340,7 @@ function CopyLinkModal({ quiz, onClose }) {
       offset: offset,
       limit: limit,
       valid_time: validUntil,
-      link:`http://54.252.223.157/quizplay/${encQuizId}/${encQuizTitle}/${encKeyword}/${EncLimit}/${EncOffset}`,
+      link:`https://quiz.friendsinchrist.in/quizplay/${encQuizId}/${encQuizTitle}/${encKeyword}/${EncLimit}/${EncOffset}`,
     };
 
     createQuizPlay(PlayData); 
