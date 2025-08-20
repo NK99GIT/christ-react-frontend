@@ -73,7 +73,6 @@ const CopyLink = (link,id) => {
   const textarea = document.createElement("textarea");
   const url = `${link}/${btoa(id)}`;
   textarea.value = url;
-  console.log(textarea.value)
   document.body.appendChild(textarea);
   textarea.select();
   try {

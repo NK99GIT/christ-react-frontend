@@ -19,10 +19,6 @@ const slide = {
 
 export default function QuizPlay() {
   const { start, end, title, id, keyword,play_id } = useParams();
-
-  console.log((play_id));
-  console.log(atob(play_id));
-
   const EncStart = atob(start);
   const EncEnd = atob(end);
   const EncID = atob(id);
@@ -155,8 +151,6 @@ const isValid = async () => {
   const currentTime = new Date();
   // Fix formatting: replace space with T
   const validTime = new Date(res2[0].valid_time.replace(" ", "T"));
-  console.log("Current:", currentTime);
-  console.log("Valid:", validTime);
   return currentTime > validTime; // true = valid, false = expired
 };
 
@@ -164,8 +158,6 @@ const isValid = async () => {
 useEffect(() => {
   const checkValid = async () => {
     const valid = await isValid();
-    console.log(valid);
-
     if (valid) {
       validConfirm();
     }
